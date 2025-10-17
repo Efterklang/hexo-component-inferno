@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-$ npm install hexo-component-inferno --save
+$ npm install @GnixAij/hexo-component-inferno --save
 ```
 
 ## API Documentation
@@ -17,3 +17,7 @@ Please refer to [this page](https://ppoffice.github.io/hexo-component-inferno/).
 ## Examples
 
 Please refer to tests in the `src` directory or take a look at [hexo-theme-icarus](https://github.com/ppoffice/hexo-theme-icarus).
+
+## Changelog
+
+- Update `google_analytics.jsx` to fix Google Tag Manager script integration.
