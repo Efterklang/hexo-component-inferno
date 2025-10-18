@@ -2,7 +2,7 @@
  * Google Analytics plugin JSX component.
  * @module view/plugin/google_analytics
  */
-const { Component } = require('inferno');
+const { Component, Fragment } = require('inferno');
 const { cacheComponent } = require('../../util/cache');
 
 /**
@@ -23,12 +23,10 @@ class GoogleAnalytics extends Component {
         gtag('config', '${trackingId}');`;
 
     return (
-      <>
-        <script
-          async={true}></script>
-          src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`}
+      <Fragment>
+        <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`}></script>
         <script dangerouslySetInnerHTML={{ __html: js }}></script>
-      </>
+      </Fragment>
     );
   }
 }
