@@ -27,8 +27,7 @@ class Twikoo extends Component {
     return (
       <Fragment>
         <div id="twikoo" class="content twikoo"></div>
-        <script src={jsUrl}></script>
-        <script dangerouslySetInnerHTML={{ __html: js }}></script>
+        <script defer src={jsUrl} onload={`${js};`}></script>
       </Fragment>
     );
   }
@@ -56,7 +55,7 @@ Twikoo.Cacheable = cacheComponent(Twikoo, 'comment.twikoo', (props) => {
     envId: comment.env_id,
     region: comment.region,
     lang: comment.lang || page.lang || page.language || config.language || 'zh-CN',
-    jsUrl: helper.cdn('twikoo', '1.6.30', 'dist/twikoo.all.min.js'),
+    jsUrl: helper.cdn('twikoo', '1.6.41', 'dist/twikoo.all.min.js'),
   };
 });
 
