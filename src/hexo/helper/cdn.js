@@ -44,15 +44,6 @@ const CDNJS_FIXTURES = {
       ? fname.substr(0, fname.length - 4) + '.min.css'
       : fname,
   ],
-  mathjax: (ver, fname) => [
-    'mathjax',
-    ver,
-    (() => {
-      fname = fname.startsWith('unpacked/') ? fname.substr(9) : fname;
-      return fname.indexOf('.min.') > -1 ? fname.replace(/\.min\./gi, '.') : fname;
-    })(),
-  ],
-  katex: (ver, fname) => ['KaTeX', ver, fname],
   'pace-js': (ver, fname) => ['pace', ver, fname],
   clipboard: (ver, fname) => ['clipboard.js', ver, fname],
   cookieconsent: (ver, fname) => [
@@ -64,11 +55,6 @@ const CDNJS_FIXTURES = {
 };
 
 const UNPKG_FIXTURES = {
-  mathjax: (ver, fname) => [
-    'mathjax',
-    ver,
-    fname.indexOf('.min.') > -1 ? fname.replace(/\.min\./gi, '.') : fname,
-  ],
   disqusjs: (ver, fname) => [
     'disqusjs',
     ver,
