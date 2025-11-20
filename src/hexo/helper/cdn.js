@@ -37,14 +37,6 @@ const CDNJS_FIXTURES = {
     ver,
     fname.startsWith('outdatedbrowser/') ? fname.substr(16) : fname,
   ],
-  'highlight.js': (ver, fname) => [
-    'highlight.js',
-    ver,
-    fname.endsWith('.css') && fname.indexOf('.min.') === -1
-      ? fname.substr(0, fname.length - 4) + '.min.css'
-      : fname,
-  ],
-  'pace-js': (ver, fname) => ['pace', ver, fname],
   clipboard: (ver, fname) => ['clipboard.js', ver, fname],
   cookieconsent: (ver, fname) => [
     'cookieconsent',
